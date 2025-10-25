@@ -18,8 +18,8 @@ function FetchProducts(){
   return (
     <div>
       {products.map((product) => (
-        // <img key={product.SKU_ID} src={product.PictureMain} alt={product.ItemName} width = {100}/>
         <p>
+          <img key={product.SKU_ID} src={product.PictureMain} alt={product.ItemName} width = {100}/>
           {product.ItemName}
         </p>
       ))}

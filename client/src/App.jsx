@@ -1,29 +1,37 @@
 import { useState } from "react";
 import FetchProducts from "./FetchProducts";
+import QueryProducts from "./QueryProducts"
 
 function App() {
   // [variable, functionToChangeIt] = useState(initialValue)
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
+  const [query, setQuery] = useState("");
   return (
 
     <div className="p-8 font-sans">
-      <div>
-        <FetchProducts />
-      </div>
 
       <h1 className="text-3xl font-bold text-blue-500 header">Your Instrument Recommender!</h1>
       <p>Guitar Guitar's personal instrument recommendation tool.</p>
       <input
         type="text"
-        placeholder="Enter your name here"
+        placeholder="Max price"
         className="input-field"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
 
+      <div>
+        <FetchProducts />
+      </div>
+
+      <div>
+        <QueryProducts/>
+      </div>
+
       <p className="mt-4 text-lg">
-        {name ? `Welcome, ${name}!` : "Type your name above."}
+        {query ? `Enter your maximumm price limit here.` : `Displaying products under ${query}`}
       </p>
+
     </div>
   );
 }
