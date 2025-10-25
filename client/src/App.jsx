@@ -2,6 +2,7 @@ import { useState } from "react";
 import FetchProducts from "./FetchProducts";
 
 function App() {
+  // initial comment
   // [variable, functionToChangeIt] = useState(initialValue)
   const [name, setName] = useState("");
   return (
